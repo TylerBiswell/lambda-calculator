@@ -12,7 +12,12 @@ const Specials = props => {
   const [specialState, setSpecialState] = useState(specials);
 
   const specialsArray = specialState.map(element => (
-    <SpecialButton key={element} value={element} />
+    <SpecialButton
+      key={element}
+      className={element}
+      value={element}
+      specialFunctions={props.specialFunctions}
+    />
   ));
 
 
@@ -24,7 +29,6 @@ const Specials = props => {
       {specialsArray}
       {/* {specialState.map(element => (<SpecialButton key="element" value={element} />
       // ))} */}
-      {console.log(specialsArray)}
     </div>
   );
 };
